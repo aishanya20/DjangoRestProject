@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'students',
     'api',
+    'employee',
+    'blogs',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +126,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK={
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':2,  #expecting only 2 data in one page
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'] 
+}
